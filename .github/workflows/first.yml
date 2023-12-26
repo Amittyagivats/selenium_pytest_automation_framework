@@ -19,7 +19,7 @@ jobs:
                 steps:
                 - run: "google-chrome --version"          
         depends-job:
-                needs: [job1, job2, job3]
+                needs: [ubuntu-job, windows-job, macos-job]
                 name: forth job
                 runs-on: ubuntu-latest
                 steps:
