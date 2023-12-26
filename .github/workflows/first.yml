@@ -17,10 +17,10 @@ jobs:
                 name: third job
                 runs-on: macos-latest
                 steps:
-                - run: "google-chrome --version"          
+                - run: date 
         depends-job:
                 needs: [ubuntu-job, windows-job, macos-job]
                 name: forth job
                 runs-on: ubuntu-latest
                 steps:
-                - run: "google-chrome --version"
+                - run: date 
