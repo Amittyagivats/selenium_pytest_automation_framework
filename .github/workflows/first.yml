@@ -1,4 +1,4 @@
-name: first
+name: complex
 
 on: push
 
@@ -7,24 +7,20 @@ jobs:
                 name: First job
                 runs-on: ubuntu-latest
                 steps:
-                - name: Step one
                 - run: date
         windows-job:
                 name: Second job
                 runs-on: windows-latest
                 steps:
-                - name: Step one
                 - run: "Get-Date"
         macos-job: 
                 name: third job
                 runs-on: macos-latest
                 steps:
-                - name: Step one
                 - run: "google-chrome --version"          
         depends-job:
                 needs: [job1, job2, job3]
                 name: forth job
                 runs-on: ubuntu-latest
                 steps:
-                - name: Step one
                 - run: "google-chrome --version"
