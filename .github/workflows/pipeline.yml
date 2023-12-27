@@ -10,12 +10,12 @@ jobs:
         - name: Setup Python environment 
           uses: actions/setup-python@v1
           with:
-            python-version: 3.8
+            python-version: 3.10
         - name: Install requirements
           run: pip install -q -r requirements.txt
-        - name: Lint Code
-          run:
-            flake8 --ignore=E05,E231 *.py
+        - name: Lint code
+          run: |
+            flake8 --ignore=E501,E231 *.py
             pylint --disable=C0301 --disable=C0326 *.py
         - name: Run unit tests
           run:
