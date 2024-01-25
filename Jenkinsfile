@@ -36,7 +36,7 @@ pipeline {
         always {
             // Clean up or perform any post-build actions here
             script {
-                sh 'deactivate'
+                sh 'venv/bin/deactivate'
             }
         }
     }
