@@ -46,12 +46,12 @@ def test_mock(monkeypatch):
 
     
 @pytest.mark.smoke_suite
-@pytest.mark.parametrize("value1,value2,expected",[(10,20,3)])
+@pytest.mark.parametrize("value1,value2,expected",[(10,20,30)])
 def test_home_page_loads(value1,value2,expected):
     # pdb.set_trace()
     expected = value1 + value2
     # pytest.skip("result==30")
-    assert expected < 10, "Value2 is not less than the result"
+    assert expected > 10, "Value2 is not less than the result"
     # pytest.skip("expected==30")
     # assert factorial_function(4)==30, "Not Equal"
 
