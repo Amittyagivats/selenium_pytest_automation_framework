@@ -6,6 +6,7 @@
 This is a pytest-based test framework for automating tests on the https://www.google.com/finance website. The framework utilizes Selenium for web automation and follows the Page Object Model (POM) structure.
 
 ## Project Structure
+```
 google_test/
 |-- tests/
 |   |-- pages/
@@ -17,7 +18,7 @@ google_test/
 |-- pytest.ini
 |-- requirements.txt
 |-- README.md
-
+```
 
 - `conftest.py`: Configuration file for pytest fixtures.
 - `pages`: Implements the Page Object Model (POM) structure.
