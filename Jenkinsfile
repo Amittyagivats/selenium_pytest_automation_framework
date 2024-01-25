@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'Linux (amd64)'
+        label 'Linux'
     }
 
     stages {
