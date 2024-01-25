@@ -25,6 +25,7 @@ pipeline {
             steps {
                 // Run pytest for Selenium tests
                 script {
+                    sh 'chmod +x run_smoke_suite.sh'
                     sh './run_smoke_suite.sh'
                 }
             }
