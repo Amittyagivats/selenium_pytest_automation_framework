@@ -17,7 +17,7 @@ pipeline {
                 // Set up any dependencies, virtual environment, etc.
                 script {
                     sh 'python3 -m venv venv'
-                    sh '. venv/bin/activate'
+                    sh 'source venv/bin/activate'
                     sh 'pip install -r requirements.txt'
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
         always {
             // Clean up or perform any post-build actions here
             script {
-                sh 'venv/bin/deactivate'
+                sh 'deactivate'
             }
         }
     }
