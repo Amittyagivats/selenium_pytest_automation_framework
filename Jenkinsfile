@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'Linux (amd64)'
+    }
 
     stages {
         stage('Checkout') {
