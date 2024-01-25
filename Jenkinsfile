@@ -10,7 +10,7 @@ pipeline {
                 }
             }
 
-        stage('Setup') {
+        stage('Debug') {
             steps {
                 // Set up any dependencies, virtual environment, etc.
                 script {
