@@ -33,14 +33,5 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            // Clean up or perform any post-build actions here
-            script {
-                sh 'venv/bin/deactivate'
-            }
-        }
-    }
 }
 
