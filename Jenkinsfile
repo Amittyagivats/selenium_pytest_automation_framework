@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code from GitHub
-                git 'https://github.com/Amittyagivats/selenium_pytest_automation_framework.git'
-            }
+                script {
+                    checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Amittyagivats/selenium_pytest_automation_framework.git']]])
+                }
         }
 
         stage('Setup') {
