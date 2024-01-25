@@ -8,62 +8,62 @@ import pdb
 
 log = logging.getLogger()
 
-def factorial_function(number):
-   # Perform a check whether the input number is positive or not, if it is not
-   # positive, raise an assert
-    assert number >= 0. and type(number) is int, "The input is not recognized"
+# def factorial_function(number):
+#    # Perform a check whether the input number is positive or not, if it is not
+#    # positive, raise an assert
+#     assert number >= 0. and type(number) is int, "The input is not recognized"
  
-    if number == 0:
-        return 1
-    else:
-      # recursive function to calculate factorial
-        return number * factorial_function(number - 1)
+#     if number == 0:
+#         return 1
+#     else:
+#       # recursive function to calculate factorial
+#         return number * factorial_function(number - 1)
 
-# def resource_1_setup():
-#     print('Setup for resource 1 called')
+# # def resource_1_setup():
+# #     print('Setup for resource 1 called')
 
-# def resource_1_teardown():
-#     print('Teardown for resource 1 called')
+# # def resource_1_teardown():
+# #     print('Teardown for resource 1 called')
     
-# class AssertionTest(softest.TestCase):
-#     resource_1_setup()
-#     resource_1_teardown()
+# # class AssertionTest(softest.TestCase):
+# #     resource_1_setup()
+# #     resource_1_teardown()
 
-def test_mock(monkeypatch):
-    # result = HomePage.multiply1(2,3)
-    # assert result == 6
+# def test_mock(monkeypatch):
+#     # result = HomePage.multiply1(2,3)
+#     # assert result == 6
     
-    def mock_fun(x,y):
-        return x+y
+#     def mock_fun(x,y):
+#         return x+y
     
-    monkeypatch.setattr(HomePage, "multiply1", mock_fun)
+#     monkeypatch.setattr(HomePage, "multiply1", mock_fun)
     
-    result = HomePage.multiply1(2,3)
-    assert result == 5
+#     result = HomePage.multiply1(2,3)
+#     assert result == 5
     
         
     
 
     
-@pytest.mark.smoke_suite
-@pytest.mark.parametrize("value1,value2,expected",[(10,20,30)])
-def test_home_page_loads(value1,value2,expected):
-    # pdb.set_trace()
-    expected = value1 + value2
-    # pytest.skip("result==30")
-    assert expected > 10, "Value2 is not less than the result"
-    # pytest.skip("expected==30")
-    # assert factorial_function(4)==30, "Not Equal"
+# @pytest.mark.smoke_suite
+# @pytest.mark.parametrize("value1,value2,expected",[(10,20,30)])
+# def test_home_page_loads(value1,value2,expected):
+#     # pdb.set_trace()
+#     expected = value1 + value2
+#     # pytest.skip("result==30")
+#     assert expected > 10, "Value2 is not less than the result"
+#     # pytest.skip("expected==30")
+#     # assert factorial_function(4)==30, "Not Equal"
 
 
-def divide(x, y):
-    if y == 0:
-        raise ValueError("Cannot divide by zero")
-    return x / y
+# def divide(x, y):
+#     if y == 0:
+#         raise ValueError("Cannot divide by zero")
+#     return x / y
 
-def test_divide_by_zero():
-    with pytest.raises(ValueError, match="Cannot divide by zero"):
-        divide(6, 0)
+# def test_divide_by_zero():
+#     with pytest.raises(ValueError, match="Cannot divide by zero"):
+#         divide(6, 0)
 
 
 
@@ -101,29 +101,30 @@ def test_divide_by_zero():
 #     # log.info("Web Page is loaded successfully.")
 #     # verify_expectations()
 # @pytest.mark.run(order=2)
-# @pytest.mark.smoke_suite
-# def test_verify_page_title(browser):
-#     home_page = HomePage(browser)
-#     home_page.open("/")
+@pytest.mark.smoke_suite
+def test_verify_page_title(browser):
+    home_page = HomePage(browser)
+    home_page.open("/")
     
-#     assert (
-#         "Google Finance - Stock Market Prices, Real-time Quotes & Business News"
-#         == home_page.get_page_title()
-#     )
+    assert (
+        "Google Finance - Stock Market Prices, Real-time Quotes & Business News"
+        == home_page.get_page_title()
+    )
 
-# @pytest.mark.smoke_suite
-# def test_search_stock(browser):
-#     home_page = HomePage(browser)
-#     home_page.open("/")
-#     home_page.search_stock("R Systems International Ltd")
-#     web_element = browser.find_element(By.XPATH, "//div[@class='zzDege']")
-#     assert "R Systems International Ltd" in web_element.text
-    # @pytest.mark.run(order=1)
-    # @pytest.mark.smoke_suite
-    # def test_news_section(browser):
-    #     home_page = HomePage(browser)
-    #     home_page.open("/")
-    #     assert home_page.is_news_section_visible()
+@pytest.mark.smoke_suite
+def test_search_stock(browser):
+    home_page = HomePage(browser)
+    home_page.open("/")
+    home_page.search_stock("R Systems International Ltd")
+    web_element = browser.find_element(By.XPATH, "//div[@class='zzDege']")
+    assert "R Systems International Ltd" in web_element.text
+    
+@pytest.mark.run(order=1)
+@pytest.mark.smoke_suite
+def test_news_section(browser):
+    home_page = HomePage(browser)
+    home_page.open("/")
+    assert home_page.is_news_section_visible()
 
 # def test_market_summary(browser):
 #     home_page = HomePage(browser)
