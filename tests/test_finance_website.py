@@ -45,7 +45,7 @@ def test_mock(monkeypatch):
     
 
     
-@pytest.mark.xfail
+@pytest.mark.smoke_suite
 @pytest.mark.parametrize("value1,value2,expected",[(10,20,3)])
 def test_home_page_loads(value1,value2,expected):
     # pdb.set_trace()
